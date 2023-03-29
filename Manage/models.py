@@ -1,7 +1,6 @@
 from django.db import models
 from datetime import date
 
-
 class Staff(models.Model):
     name = models.CharField(max_length=100)
     phone_number = models.CharField(max_length=10)
@@ -80,6 +79,3 @@ class StockOut(models.Model):
 
     def get_total_price(self):
         return self.quantity * self.unit_price
-    
-    
-    print("hi")
