@@ -9,6 +9,7 @@
         <th>Price</th>
         <th>Quantity</th>
         <th>Supplier</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -18,10 +19,12 @@
           <td>{{ product.price }}</td>
           <td>{{ product.quantity }}</td>
           <td>{{ product.supplier }}</td>
-        </tr>
-      {% empty %}
-        <tr>
-          <td colspan="6">No products found.</td>
+          <td>
+            <ul>
+              <li><a href="{% url 'update_product' pk=product.pk %}">Update</a></li>
+              <li><a href="{% url 'delete_product' pk=product.pk %}">Delete</a></li>
+            </ul>
+          </td>
         </tr>
       {% endfor %}
     </tbody>
